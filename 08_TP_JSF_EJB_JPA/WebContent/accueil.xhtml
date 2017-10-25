@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Page Accueil</title>
+</h:head>
+<h:body>
+
+<h:form>
+<p:breadCrumb>
+	<p:menuitem value="Accueil" url="#" />
+    <p:menuitem value="Ajouter" url="ajout.xhtml" />
+    <p:menuitem value="Modifier" url="update.xhtml" />
+    <p:menuitem value="Supprimer" url="delete.xhtml" />
+    <p:menuitem value="Rechercher" url="cherch.xhtml" />
+</p:breadCrumb>
+</h:form>
+
+	<h1 style="color: red; text-align: center;">Liste des clients</h1>
+
+	<h:form>
+    <p:dataTable var="cl" value="#{sessionScope.clientListe}" rows="1"
+                         paginator="true"
+                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         rowsPerPageTemplate="1,10,15">
+        <p:column headerText="Id">
+            <h:outputText value="#{cl.id}" />
+        </p:column>
+ 
+        <p:column headerText="Year">
+            <h:outputText value="#{cl.nom}" />
+        </p:column>
+ 
+        <p:column headerText="Brand">
+            <h:outputText value="#{cl.prenom}" />
+        </p:column>
+ 
+        <p:column headerText="Color">
+            <h:outputText value="#{cl.dateNaissance}" />
+        </p:column>
+    </p:dataTable>
+</h:form>
+
+	<h:form>
+		<h:commandButton value="Se déconnecter" action="#{aMB.seDeconnecter}"></h:commandButton>
+	</h:form>
+
+</h:body>
+
+
+</html>

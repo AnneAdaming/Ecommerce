@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Modification</title>
+</h:head>
+<h:body>
+
+	<h:form>
+		<h:panelGrid columns="2">
+			<p:outputLabel for="id" value="ID :" />
+			<p:inputMask id="id" value="#{clMB.client.id}" />
+
+
+			<p:outputLabel for="nom" value="Nom :" />
+			<p:inputMask id="nom" value="#{clMB.client.nom}" />
+
+			<p:outputLabel for="prenom" value="Prénom :" />
+			<p:inputMask id="prenom" value="#{clMB.client.prenom}" />
+
+
+			<p:outputLabel for="dn" value="Date de naissance :" />
+			<p:calendar id="dn" value="#{clMB.client.dateNaissance}"
+				mode="inline" />
+
+			<h:commandButton value="Ajouter" action="#{clMB.modifierClient}" />
+		</h:panelGrid>
+	</h:form>
+
+	<h4>
+		<h:messages style="color:red"></h:messages>
+	</h4>
+
+
+</h:body>
+</html>

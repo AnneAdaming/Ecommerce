@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="PU_TP" transaction-type="JTA">
+
+		<!-- Sepecifier la data source à utiliser -->
+		<jta-data-source>java:/maDataSource</jta-data-source>
+
+		<!-- Declaration des classes persistentes -->
+		<class>fr.adaming.model.Agent</class>
+		<class>fr.adaming.model.Client</class>
+
+		<!-- les props de hibernate -->
+		<properties>
+			<property name="hibernate.hbm2ddl.auto" value="validate" />
+			<property name="hibernate.show_sql" value="true" />
+		</properties>
+
+	</persistence-unit>
+</persistence>
