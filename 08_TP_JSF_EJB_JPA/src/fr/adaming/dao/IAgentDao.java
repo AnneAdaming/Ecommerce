@@ -4,6 +4,7 @@ import javax.ejb.Local;
 
 import fr.adaming.model.Agent;
 
+// Local
 @Local
 public interface IAgentDao {
 
